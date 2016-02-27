@@ -10,7 +10,7 @@
 #include "char_conv.h"		/* str_encoding_t */
 struct pvt;
 
-EXPORT_DECL char* at_parse_cnum (char* str);
+//EXPORT_DECL char* at_parse_cnum (char* str);
 EXPORT_DECL char* at_parse_cops (char* str);
 EXPORT_DECL int at_parse_creg (char* str, unsigned len, int* gsm_reg, int* gsm_reg_status, char** lac, char** ci);
 EXPORT_DECL int at_parse_cmti (const char* str);

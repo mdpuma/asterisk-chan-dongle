@@ -39,7 +39,7 @@ typedef enum {
 	CMD_AT_CMGS,
 	CMD_AT_SMSTEXT,
 	CMD_AT_CNMI,
-	CMD_AT_CNUM,
+//	CMD_AT_CNUM,
 
 	CMD_AT_COPS,
 	CMD_AT_COPS_INIT,
@@ -108,7 +108,7 @@ INLINE_DECL const char* at_cmd2str (at_cmd_t cmd)
 		"AT+CMGS",
 		"SMSTEXT",
 		"AT+CNMI",
-		"AT+CNUM",
+//		"AT+CNUM",
 
 		"AT+COPS?",
 		"AT+COPS=",

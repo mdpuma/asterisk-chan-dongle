@@ -46,7 +46,7 @@ static const at_response_t at_responses_list[] = {
 	{ RES_CMGR, "+CMGR",DEF_STR("+CMGR:") },
 	{ RES_CMS_ERROR, "+CMS ERROR",DEF_STR("+CMS ERROR:") },
 	{ RES_CMTI, "+CMTI",DEF_STR("+CMTI:") },
-	{ RES_CNUM, "+CNUM",DEF_STR("+CNUM:") },		/* and "ERROR+CNUM:" */
+//	{ RES_CNUM, "+CNUM",DEF_STR("+CNUM:") },		/* and "ERROR+CNUM:" */
 
 	{ RES_CONF,"^CONF",DEF_STR("^CONF:") },
 	{ RES_CONN,"^CONN",DEF_STR("^CONN:") },
@@ -82,7 +82,7 @@ static const at_response_t at_responses_list[] = {
 	{ RES_CCWA,"+CCWA", DEF_STR("+CCWA:") },
 
 	/* duplicated response undef other id */
-	{ RES_CNUM, "+CNUM",DEF_STR("ERROR+CNUM:") },
+//	{ RES_CNUM, "+CNUM",DEF_STR("ERROR+CNUM:") },
 	{ RES_ERROR,"ERROR",DEF_STR("COMMAND NOT SUPPORT\r") },
 	};
 #undef DEF_STR
@@ -157,10 +157,10 @@ static int at_response_ok (struct pvt* pvt, at_res_t res)
 				ast_debug (1, "[%s] registration query sent\n", PVT_ID(pvt));
 				break;
 
-			case CMD_AT_CNUM:
+/*			case CMD_AT_CNUM:
 				ast_debug (1, "[%s] Subscriber phone number query successed\n", PVT_ID(pvt));
 				break;
-
+*/
 			case CMD_AT_CVOICE:
 				ast_debug (1, "[%s] Dongle has voice support\n", PVT_ID(pvt));
 
@@ -380,11 +380,11 @@ static int at_response_error (struct pvt* pvt, at_res_t res)
 				ast_debug (1, "[%s] Error getting registration info\n", PVT_ID(pvt));
 				break;
 
-			case CMD_AT_CNUM:
+/*			case CMD_AT_CNUM:
 				ast_log (LOG_WARNING, "[%s] Error checking subscriber phone number\n", PVT_ID(pvt));
 				ast_verb (3, "[%s] Dongle needs to be reinitialized. The SIM card is not ready yet\n", PVT_ID(pvt));
 				goto e_return;
-
+*/
 			case CMD_AT_CVOICE:
 				ast_debug (1, "[%s] Dongle has NO voice support\n", PVT_ID(pvt));
 				ast_log (LOG_WARNING, "[%s] Dongle has NO voice support\n", PVT_ID(pvt));
@@ -1452,7 +1452,7 @@ static int at_response_csq (struct pvt* pvt, const char* str)
  * \retval  0 success
  * \retval -1 error
  */
-
+/*
 static int at_response_cnum (struct pvt* pvt, char* str)
 {
 	char* number = at_parse_cnum (str);
@@ -1470,7 +1470,7 @@ static int at_response_cnum (struct pvt* pvt, char* str)
 
 	return -1;
 }
-
+*/
 /*!
  * \brief Handle +COPS response Here we get the GSM provider name
  * \param pvt -- pvt structure
@@ -1815,10 +1815,10 @@ int at_response (struct pvt* pvt, const struct iovec iov[2], int iovcnt, at_res_
 				/* fatal */
 				return at_response_cpin (pvt, str, len);
 
-			case RES_CNUM:
+//			case RES_CNUM:
 				/* An error here is not fatal. Just keep going. */
-				at_response_cnum (pvt, str);
-				return 0;
+//				at_response_cnum (pvt, str);
+//				return 0;
 
 			case RES_CSCA:
 				/* An error here is not fatal. Just keep going. */

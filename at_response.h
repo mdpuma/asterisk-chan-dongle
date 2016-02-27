@@ -22,7 +22,7 @@ typedef enum {
 	RES_CMGR,
 	RES_CMS_ERROR,
 	RES_CMTI,
-	RES_CNUM,
+//	RES_CNUM,
 
 	RES_CONF,
 	RES_CONN,

@@ -45,7 +45,7 @@ static unsigned mark_line(char * line, const char * delimiters, char * pointers[
  * @note str will be modified when the CNUM message is parsed
  * \return NULL on error (parse error) or a pointer to the subscriber number
  */
-
+/*
 EXPORT_DEF char * at_parse_cnum (char* str)
 {
 	/*
@@ -56,12 +56,12 @@ EXPORT_DEF char * at_parse_cnum (char* str)
 	 *   +CNUM: "Subscriber Number","",145
 	 *   +CNUM: "Subscriber Number",,145
 	 */
-
+/*
 	char delimiters[] = ":,,";
 	char * marks[STRLEN(delimiters)];
 
 	/* parse URC only here */
-	if(mark_line(str, delimiters, marks) == ITEMS_OF(marks))
+/*	if(mark_line(str, delimiters, marks) == ITEMS_OF(marks))
 	{
 		marks[1]++;
 		if(marks[1][0] == '"')
@@ -74,7 +74,7 @@ EXPORT_DEF char * at_parse_cnum (char* str)
 
 	return NULL;
 }
-
+*/
 /*!
  * \brief Parse a COPS response
  * \param str -- string to parse (null terminated)
